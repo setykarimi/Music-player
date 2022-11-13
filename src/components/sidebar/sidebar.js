@@ -1,5 +1,5 @@
 import './sidebar.css';
-import SidebarButton from '../../../sidebarButton/sidebarButton';
+import SidebarButton from './sidebarButton/sidebarButton';
 import { MdSpaceDashboard, MdFavorite } from 'react-icons/md';
 import { FaGripfire, FaPlay, FaSignOutAlt } from 'react-icons/fa';
 import { IoLibrary } from 'react-icons/io5'
