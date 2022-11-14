@@ -3,11 +3,18 @@ import SidebarButton from './sidebarButton/sidebarButton';
 import { MdSpaceDashboard, MdFavorite } from 'react-icons/md';
 import { FaGripfire, FaPlay, FaSignOutAlt } from 'react-icons/fa';
 import { IoLibrary } from 'react-icons/io5'
+import { useEffect, useState } from 'react';
+import apiClient from '../../spotify';
 
 export default function Sidebar() {
+    const [image, setImage] = useState("https://i1.wp.com/hypebeast.com/image/2020/07/apple-memoji-update-headwear-masks-hairstyles-7.png?w=1600")
+    useEffect(()=> {
+        apiClient.get("me")
+        .then(res => setImage(res.data.images[0].url))
+    },[])
     return (
         <div className='sidebar-container'>
-            <img src='' className='profile-img' alt='profile' />
+            <img src={image} className='profile-img' alt='profile' />
             <div>
                 <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard/>}/>
                 <SidebarButton title="Trending" to="/trending" icon={<FaGripfire/>}/>
