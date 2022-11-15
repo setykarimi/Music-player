@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.main-body{
+  height: 100vh;
+  width: 100vw;
+  background: #e99D72;
+  border-radius: 30px;
+  display: flex;
+}
